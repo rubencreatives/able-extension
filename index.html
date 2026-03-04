@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary SEO -->
+<title>Able — WCAG & ADA Accessibility Checker for Chrome (Free)</title>
+<meta name="description" content="One-click WCAG 2.1 & ADA accessibility audits for any website. Plain-language results, fix suggestions, and PDF compliance reports. Free Chrome extension.">
+<meta name="keywords" content="accessibility checker, WCAG audit, ADA compliance, web accessibility, Chrome extension, accessibility testing, WCAG 2.1, Section 508, a11y, contrast checker, screen reader, alt text checker, accessibility report">
+<meta name="author" content="Able">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://able.app/">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://able.app/">
+<meta property="og:title" content="Able — WCAG & ADA Accessibility Checker for Any Website">
+<meta property="og:description" content="One-click accessibility audits with plain-language results and actionable fix suggestions. Free Chrome extension for designers, developers, and compliance teams.">
+<meta property="og:image" content="https://able.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Able Chrome extension showing an accessibility audit with score dashboard and violation list">
+<meta property="og:site_name" content="Able">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Able — WCAG & ADA Accessibility Checker for Any Website">
+<meta name="twitter:description" content="One-click accessibility audits with plain-language results and actionable fix suggestions. Free Chrome extension.">
+<meta name="twitter:image" content="https://able.app/og-image.png">
+<meta name="twitter:image:alt" content="Able Chrome extension showing an accessibility audit with score dashboard and violation list">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<!-- Structured Data: SoftwareApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Able - Accessibility & ADA Compliance Checker",
+  "description": "One-click WCAG 2.1 & ADA accessibility audits for any website with plain-language results, actionable fix suggestions, and PDF compliance reports.",
+  "url": "https://able.app",
+  "applicationCategory": "BrowserApplication",
+  "operatingSystem": "Chrome",
+  "offers": [
+    {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "name": "Free",
+      "description": "5 audits per month with plain-language results and score dashboard"
+    },
+    {
+      "@type": "Offer",
+      "price": "29",
+      "priceCurrency": "USD",
+      "name": "Pro",
+      "description": "Unlimited audits, fix suggestions, contrast preview, and PDF reports"
+    }
+  ],
+  "screenshot": "https://able.app/hero-screenshot.png",
+  "featureList": "WCAG 2.1 AA Compliance Checking, Plain-Language Results, Visual Score Dashboard, Fix Suggestions, Contrast Preview, PDF Reports"
+}
+</script>
+
+<!-- Structured Data: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What accessibility standards does Able check against?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Able audits against WCAG 2.1 Level AA, which is the standard referenced by the Americans with Disabilities Act (ADA), Section 508, and most international accessibility laws."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Able send my data to any server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Able runs 100% in your browser. Your audit results, browsing data, and license key are stored locally on your machine and never transmitted anywhere."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between the Free and Pro tiers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Free gives you 5 audits per month with plain-language results and a score dashboard. Pro removes the audit limit and adds fix suggestions with specific hex codes and CSS snippets, before/after contrast previews, and exportable PDF reports."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Able a subscription?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Able Pro is a one-time $29 purchase. You pay once and own it forever. No monthly fees, no annual renewals, no surprise charges."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will Able make my site fully ADA compliant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Able catches issues that automated tools can detect, covering roughly 30-40% of WCAG criteria including contrast failures, missing alt text, unlabeled forms, and heading order issues. For full compliance, also test with keyboard navigation and a screen reader."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use Able on any website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Able works on any publicly accessible webpage — your own site, a competitor's site, a client's staging environment, or any URL you can open in Chrome."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What engine powers the audits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Able is built on axe-core, the same open-source accessibility engine used by Microsoft, Google, and US government agencies."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Structured Data: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Able",
+  "url": "https://able.app",
+  "logo": "https://able.app/logo.svg",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "support@able.app",
+    "contactType": "customer support"
+  }
+}
+</script>
+
+<!-- Preconnect & Fonts -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+
+<!-- Theme Color -->
+<meta name="theme-color" content="#2563EB">
+<style>
+/* ============================================
+   Able Landing Page
+   ============================================ */
+
+:root {
+  --blue: #2563EB;
+  --blue-dark: #1D4ED8;
+  --blue-light: #EFF6FF;
+  --blue-100: #DBEAFE;
+  --blue-200: #BFDBFE;
+  --sky: #0EA5E9;
+  --text: #0F172A;
+  --text-secondary: #475569;
+  --text-tertiary: #94A3B8;
+  --border: #E2E8F0;
+  --bg: #FFFFFF;
+  --bg-alt: #F8FAFC;
+  --green: #059669;
+  --green-light: #ECFDF5;
+  --red: #DC2626;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Layout ── */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section { padding: 100px 0; }
+
+/* ── Typography ── */
+h1, h2, h3 { line-height: 1.2; letter-spacing: -0.02em; }
+h1 { font-size: clamp(36px, 5vw, 56px); font-weight: 900; }
+h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; }
+h3 { font-size: 20px; font-weight: 700; }
+
+.section-label {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 16px auto 0;
+}
+
+.text-center { text-align: center; }
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 28px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--blue);
+  color: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 4px 12px rgba(37,99,235,0.25);
+}
+.btn-primary:hover {
+  background: var(--blue-dark);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 8px 24px rgba(37,99,235,0.3);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--bg);
+  color: var(--text);
+  border: 1.5px solid var(--border);
+}
+.btn-secondary:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.btn-large { padding: 18px 36px; font-size: 17px; border-radius: 14px; }
+
+.btn svg { flex-shrink: 0; }
+
+/* ============================================
+   NAV
+   ============================================ */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-logo-svg {
+  height: 22px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.nav-links a:hover { color: var(--text); }
+
+.nav-cta {
+  background: var(--blue);
+  color: #fff !important;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 600 !important;
+}
+.nav-cta:hover { background: var(--blue-dark); color: #fff !important; }
+
+/* Mobile nav */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  padding: 140px 0 100px;
+  background: linear-gradient(180deg, var(--blue-light) 0%, var(--bg) 100%);
+  overflow: hidden;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg);
+  border: 1px solid var(--blue-200);
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+}
+.hero-badge .dot {
+  width: 6px;
+  height: 6px;
+  background: var(--green);
+  border-radius: 50%;
+}
+
+.hero h1 { margin-bottom: 20px; }
+
+.hero h1 .highlight {
+  background: linear-gradient(135deg, var(--blue), var(--sky));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-description {
+  font-size: 19px;
+  color: var(--text-secondary);
+  max-width: 620px;
+  margin: 0 auto 36px;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero-note {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
+.hero-visual {
+  margin-top: 60px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.hero-screenshot-img {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.04);
+  display: block;
+}
+
+/* ============================================
+   SOCIAL PROOF BAR
+   ============================================ */
+.proof-bar {
+  padding: 40px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.proof-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.proof-stat {
+  text-align: center;
+}
+
+.proof-stat .number {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.proof-stat .label {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  margin-top: 2px;
+}
+
+/* ============================================
+   PROBLEM / SOLUTION
+   ============================================ */
+.problem-section {
+  background: var(--bg-alt);
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-top: 48px;
+}
+
+@media (max-width: 768px) {
+  .problem-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
+.problem-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.problem-card.bad {
+  border-color: #FECACA;
+  background: #FFF5F5;
+}
+
+.problem-card.good {
+  border-color: #A7F3D0;
+  background: #F0FDF9;
+}
+
+.problem-card-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.problem-card.bad .problem-card-label { color: var(--red); }
+.problem-card.good .problem-card-label { color: var(--green); }
+
+.problem-card h3 { margin-bottom: 12px; }
+
+.problem-card p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.problem-code {
+  margin-top: 16px;
+  background: #1E293B;
+  color: #E2E8F0;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+.problem-code .dim { opacity: 0.4; }
+.problem-code .red { color: #FCA5A5; }
+.problem-code .green { color: #86EFAC; }
+
+.problem-plain {
+  margin-top: 16px;
+  background: var(--blue-light);
+  border: 1px solid var(--blue-200);
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ============================================
+   FEATURES
+   ============================================ */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+
+@media (max-width: 900px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .features-grid { grid-template-columns: 1fr; } }
+
+.feature-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.feature-card:hover {
+  border-color: var(--blue-200);
+  box-shadow: 0 4px 16px rgba(37,99,235,0.06);
+}
+
+.feature-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--blue-light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  color: var(--blue);
+  font-size: 20px;
+}
+
+.feature-card h3 { margin-bottom: 8px; font-size: 17px; }
+
+.feature-card p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.feature-card .pro-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--blue), var(--sky));
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* ============================================
+   HOW IT WORKS
+   ============================================ */
+.how-section { background: var(--bg-alt); }
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 56px;
+  counter-reset: step;
+}
+
+@media (max-width: 768px) { .steps { grid-template-columns: 1fr; } }
+
+.step {
+  text-align: center;
+  counter-increment: step;
+}
+
+.step-number {
+  width: 56px;
+  height: 56px;
+  background: var(--blue);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0 auto 20px;
+}
+
+.step h3 { margin-bottom: 8px; }
+
+.step p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 300px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+/* ============================================
+   PRICING
+   ============================================ */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 800px;
+  margin: 56px auto 0;
+}
+
+@media (max-width: 700px) { .pricing-grid { grid-template-columns: 1fr; } }
+
+.pricing-card {
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 36px 32px;
+  position: relative;
+  background: var(--bg);
+}
+
+.pricing-card.featured {
+  border-color: var(--blue);
+  box-shadow: 0 8px 32px rgba(37,99,235,0.12);
+}
+
+.pricing-card.featured::before {
+  content: 'MOST POPULAR';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--blue);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 4px 14px;
+  border-radius: 100px;
+}
+
+.pricing-tier {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-tertiary);
+  margin-bottom: 8px;
+}
+
+.pricing-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.pricing-price .amount {
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+
+.pricing-price .period {
+  font-size: 15px;
+  color: var(--text-tertiary);
+}
+
+.pricing-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.pricing-features {
+  list-style: none;
+  margin-bottom: 28px;
+}
+
+.pricing-features li {
+  font-size: 14px;
+  color: var(--text-secondary);
+  padding: 8px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.pricing-features li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  background: var(--green-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.5 6L5 8.5L9.5 4' stroke='%23059669' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.pricing-card .btn { width: 100%; justify-content: center; }
+
+.pricing-guarantee {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
+/* ============================================
+   FAQ
+   ============================================ */
+.faq-list {
+  max-width: 720px;
+  margin: 48px auto 0;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 20px 0;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.faq-question:hover { color: var(--blue); }
+
+.faq-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--bg-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+  font-size: 18px;
+  color: var(--text-tertiary);
+  line-height: 1;
+}
+
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 300px;
+}
+
+.faq-answer p {
+  padding-bottom: 20px;
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ============================================
+   FINAL CTA
+   ============================================ */
+.final-cta {
+  background: var(--text);
+  padding: 80px 0;
+  text-align: center;
+  color: #fff;
+}
+
+.final-cta h2 { color: #fff; margin-bottom: 12px; }
+
+.final-cta p {
+  color: #94A3B8;
+  font-size: 18px;
+  margin-bottom: 32px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.final-cta .btn-primary {
+  background: #fff;
+  color: var(--text);
+  box-shadow: none;
+}
+.final-cta .btn-primary:hover {
+  background: var(--blue-light);
+  color: var(--blue);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  padding: 32px 0;
+  border-top: 1px solid var(--border);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.footer-links a {
+  color: var(--text-tertiary);
+  text-decoration: none;
+}
+.footer-links a:hover { color: var(--text-secondary); }
+
+@media (max-width: 600px) {
+  .footer-inner { flex-direction: column; gap: 12px; }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+
+/* ── Reduced motion preference ── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate { animation: none; opacity: 1; }
+  .faq-answer { transition: none; }
+  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+/* ── Content visibility for off-screen sections ── */
+.how-section, #pricing, #faq, .final-cta, footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
+/* ── Skip Link (Accessibility) ── */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  background: var(--blue);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 0 0 8px 8px;
+  font-weight: 600;
+  font-size: 14px;
+  z-index: 200;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- NAV -->
+<header>
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" aria-label="Able — Home">
+      <svg class="nav-logo-svg" viewBox="0 0 604.56 184.23" height="32"><path fill="#2563EB" d="M184.44,3.45h49.34c42.23,0,63.13,15.73,63.13,48.48,0,15.3-6.68,26.72-16.38,32.97,15.51,6.46,24.56,21.33,24.56,39.22,0,35.12-22.41,56.88-70.67,56.88h-49.99V3.45ZM234.64,73.26c13.57,0,21.76-4.31,21.76-16.16,0-12.93-7.97-17.02-21.76-17.02h-9.48v33.18h9.48ZM233.13,141.56c18.53,0,28.01-4.31,28.01-18.32s-9.48-18.96-26.5-18.96h-9.48v37.28h7.97Z"/><path fill="#2563EB" d="M325.35,3.23h43.31v136.61h52.14v41.16h-95.45V3.23Z"/><path fill="#2563EB" d="M420.37,92.01c0-49.13,38.79-92.01,92.22-92.01s99.33,49.77,90.93,104.72h-140.49c3.23,22.41,23.27,39.86,49.34,39.86,17.67,0,32.97-9.05,40.94-22.84h46.76c-11.42,36.2-45.25,62.49-87.48,62.49-53.44,0-92.22-42.88-92.22-92.22ZM558.48,72.4c-5.6-18.75-23.92-32.1-46.33-32.1s-40.51,13.57-46.54,32.1h92.87Z"/><path fill="#2563EB" d="M109.46,3.66h-44.82L0,180.99h45.46l7.33-21.98h68.52l7.33,21.98h44.39L109.46,3.66ZM112.54,91.18c0,9.61-4.64,18.62-12.46,24.2l-13.57,9.69-13.57-9.69c-7.82-5.58-12.46-14.6-12.46-24.2v-14.44l26.03-11.15,26.03,11.15v14.44Z"/></svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="https://chromewebstore.google.com" class="nav-cta" rel="noopener noreferrer">Install Free</a></li>
+    </ul>
+  </div>
+</nav>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="main-content">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge animate">
+        <span class="dot"></span>
+        Chrome Extension — Install in 2 seconds
+      </div>
+      <h1 class="animate delay-1">
+        Find & fix accessibility issues <span class="highlight">before they become lawsuits</span>
+      </h1>
+      <p class="hero-description animate delay-2">
+        One-click WCAG & ADA compliance audits for any website. Get plain-language results you can actually understand — with exact fix suggestions to resolve every issue.
+      </p>
+      <div class="hero-buttons animate delay-3">
+        <a href="https://chromewebstore.google.com" class="btn btn-primary btn-large" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="M21.17 8H12"/><path d="M3.95 6.06L8.54 14"/><path d="M10.88 21.94L15.46 14"/></svg>
+          Add to Chrome — Free
+        </a>
+        <a href="#pricing" class="btn btn-secondary btn-large">See Pricing</a>
+      </div>
+      <p class="hero-note animate delay-3">Free forever for basic audits. No account required.</p>
+    </div>
+
+    <div class="hero-visual animate delay-3">
+      <img class="hero-screenshot-img" src="hero-screenshot.png" alt="Able Chrome extension auditing Apple.com — showing an 86 accessibility score with issues sorted by severity" width="900" height="553" loading="eager" fetchpriority="high" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="proof-bar">
+  <div class="container">
+    <div class="proof-stats">
+      <div class="proof-stat">
+        <div class="number">WCAG 2.1</div>
+        <div class="label">Full AA Standard</div>
+      </div>
+      <div class="proof-stat">
+        <div class="number">&lt; 3 sec</div>
+        <div class="label">Average Audit Time</div>
+      </div>
+      <div class="proof-stat">
+        <div class="number">100+</div>
+        <div class="label">Accessibility Rules Checked</div>
+      </div>
+      <div class="proof-stat">
+        <div class="number">0 Data</div>
+        <div class="label">Sent to Any Server</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM / SOLUTION -->
+<section class="problem-section" id="problem">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-label">The Problem</div>
+      <h2>Accessibility tools weren't built for humans</h2>
+      <p class="section-subtitle">Every existing tool outputs cryptic rule IDs and DOM selectors. Able translates that into language anyone can act on.</p>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-card bad">
+        <div class="problem-card-label">Other tools say this</div>
+        <h3>Confusing. Technical. Useless.</h3>
+        <p>You see error codes and XML-like selectors that mean nothing unless you're deep in the DOM.</p>
+        <div class="problem-code">
+          <span class="red">color-contrast</span> <span class="dim">(serious)</span><br>
+          <span class="dim">Element:</span> #nav > ul > li:nth-child(3) > a<br>
+          <span class="dim">Expected ratio:</span> 4.5:1<br>
+          <span class="dim">Actual ratio:</span> 2.8:1<br>
+          <span class="dim">Fix any of the following:</span><br>
+          <span class="dim">&nbsp;&nbsp;Element has insufficient color contrast...</span>
+        </div>
+      </div>
+
+      <div class="problem-card good">
+        <div class="problem-card-label">Able says this</div>
+        <h3>Clear. Actionable. Human.</h3>
+        <p>You see what's wrong, why it matters, and exactly how to fix it — in plain language.</p>
+        <div class="problem-plain">
+          <strong>Some text doesn't have enough contrast against its background — it's hard to read.</strong><br><br>
+          People with low vision or color blindness may not be able to read this text at all.<br><br>
+          <span style="color: var(--blue); font-weight: 600;">Fix: Change text color from #9CA3AF to #4B6A9B (passes 4.5:1) →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-label">Features</div>
+      <h2>Everything you need to ship accessible websites</h2>
+      <p class="section-subtitle">From one-click audits to exportable compliance reports — Able covers the full workflow.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </div>
+        <h3>One-Click Audits</h3>
+        <p>Open any page, click Able, and get a full WCAG 2.1 accessibility audit in under 3 seconds. No setup, no configuration.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h3>Plain-Language Results</h3>
+        <p>Every issue is explained in words anyone can understand. No WCAG rule IDs, no developer jargon, no guessing.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>Visual Score Dashboard</h3>
+        <p>See your accessibility score at a glance with a severity breakdown — Critical, Serious, Moderate, and Minor issues.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <h3>Fix Suggestions <span class="pro-tag">PRO</span></h3>
+        <p>Get specific hex codes, font sizes, and CSS snippets for every violation. Copy, paste, and your issue is resolved.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="6.5" cy="13.5" r="2.5"/><path d="M8 6.5h8M6.5 16v5M13.5 9v5"/></svg>
+        </div>
+        <h3>Contrast Preview <span class="pro-tag">PRO</span></h3>
+        <p>See before/after color previews with three fix options — minimum pass, comfortable, and AAA-level. Click to copy the hex code.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h3>PDF Reports <span class="pro-tag">PRO</span></h3>
+        <p>Export professional, branded accessibility reports as PDF with one click. Send them to clients, attach to compliance documentation, or share with your team.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how-it-works">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-label">How It Works</div>
+      <h2>Three clicks to full compliance visibility</h2>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Install & Open</h3>
+        <p>Add Able from the Chrome Web Store. Navigate to any website and click the Able icon in your toolbar.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Run Audit</h3>
+        <p>Hit "Run Accessibility Audit." In under 3 seconds, you'll see every issue on the page — scored by severity.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Fix & Export</h3>
+        <p>Click any issue for plain-language details and exact fix suggestions. Export a professional report when you're done.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-label">Pricing</div>
+      <h2>Start free. Upgrade when you're ready.</h2>
+      <p class="section-subtitle">No subscriptions. No recurring charges. Pay once, own it forever.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Free -->
+      <div class="pricing-card">
+        <div class="pricing-tier">Free</div>
+        <div class="pricing-price">
+          <span class="amount">$0</span>
+          <span class="period">forever</span>
+        </div>
+        <p class="pricing-desc">Perfect for quick accessibility checks on any site.</p>
+        <ul class="pricing-features">
+          <li>5 audits per month</li>
+          <li>WCAG 2.1 AA compliance checking</li>
+          <li>Visual score dashboard</li>
+          <li>Plain-language issue descriptions</li>
+          <li>Element highlighting on page</li>
+        </ul>
+        <a href="https://chromewebstore.google.com" class="btn btn-secondary" rel="noopener noreferrer">Install Free</a>
+      </div>
+
+      <!-- Pro -->
+      <div class="pricing-card featured">
+        <div class="pricing-tier">Pro</div>
+        <div class="pricing-price">
+          <span class="amount">$29</span>
+          <span class="period">one-time</span>
+        </div>
+        <p class="pricing-desc">For professionals who audit sites regularly and need actionable fixes.</p>
+        <ul class="pricing-features">
+          <li><strong>Unlimited</strong> audits — no monthly cap</li>
+          <li>Everything in Free</li>
+          <li>Fix suggestions with exact hex codes & CSS</li>
+          <li>Before/after contrast preview</li>
+          <li>One-click PDF compliance reports</li>
+          <li>Priority email support</li>
+        </ul>
+        <a href="#" class="btn btn-primary" id="buy-pro-btn">Get Able Pro — $29</a>
+      </div>
+    </div>
+
+    <p class="pricing-guarantee">One-time purchase. No subscription. Yours forever. 14-day money-back guarantee.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background: var(--bg-alt);" aria-labelledby="faq-heading">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-label">FAQ</div>
+      <h2 id="faq-heading">Frequently asked questions</h2>
+    </div>
+
+    <div class="faq-list" role="list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          What accessibility standards does Able check against?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Able audits against WCAG 2.1 Level AA, which is the standard referenced by the Americans with Disabilities Act (ADA), Section 508, and most international accessibility laws. This covers the vast majority of compliance requirements for businesses and organizations.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          Does Able send my data to any server?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>No. Able runs 100% in your browser. Your audit results, browsing data, and license key are stored locally on your machine and never transmitted anywhere. We don't use analytics, cookies, or tracking of any kind.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          What's the difference between the Free and Pro tiers?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Free gives you 5 audits per month with plain-language results and a score dashboard — plenty for occasional checks. Pro removes the audit limit and adds the fix suggestion engine (specific hex codes and CSS snippets), before/after contrast previews, and exportable PDF reports for client delivery.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          Is this a subscription?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>No. Able Pro is a one-time $29 purchase. You pay once and own it forever. No monthly fees, no annual renewals, no surprise charges. We also offer a 14-day money-back guarantee if it's not right for you.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          How do I activate my Pro license?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>After purchase, you'll receive a license key via email. Open the Able extension, click "Upgrade," then "I already have a license key," and paste it in. Pro features activate instantly — no restart needed.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          Will Able make my site fully ADA compliant?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Able catches the issues that automated tools can detect — which covers roughly 30-40% of WCAG criteria. This includes contrast failures, missing alt text, unlabeled forms, heading order issues, and more. For full compliance, we recommend also testing with keyboard navigation and a screen reader. Able's reports are a great starting point, but they are not a substitute for legal advice.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          Can I use Able on any website?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Able works on any publicly accessible webpage — your own site, a competitor's site, a client's staging environment, or any URL you can open in Chrome. It cannot audit browser internal pages (like chrome:// URLs) or pages that block script injection.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          What engine powers the audits?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Able is built on axe-core, the same open-source accessibility engine used by Microsoft, Google, and US government agencies. We don't invent our own rules — we use the industry standard and translate the output into plain language with actionable fix suggestions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Stop guessing. Start auditing.</h2>
+    <p>Install Able in 2 seconds and run your first accessibility audit right now.</p>
+    <a href="https://chromewebstore.google.com" class="btn btn-primary btn-large" rel="noopener noreferrer">
+      Add to Chrome — It's Free
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-inner">
+      <span>&copy; 2026 Able. All rights reserved.</span>
+      <nav aria-label="Footer navigation">
+        <ul class="footer-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="mailto:support@able.app">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
