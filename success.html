@@ -306,7 +306,6 @@
 
           if (res.ok && data.licenseKey) {
             document.getElementById('license-key-display').textContent = data.licenseKey;
-            document.getElementById('email-display').textContent = data.email || 'your email';
             showState('success');
             return;
           }
